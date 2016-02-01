@@ -1,0 +1,6 @@
+{
+  "name": "VideoComment",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./VideoComment.js"
+}

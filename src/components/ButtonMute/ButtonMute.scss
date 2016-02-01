@@ -1,0 +1,41 @@
+.btnDiv {
+  position: absolute;
+  z-index: 99999;
+  left: 20px;
+  bottom: 20px
+}
+
+.btn {
+  position: relative;
+  color: #fff;
+  background: transparent;
+  border: none;
+  transition: color 0.2s
+}
+
+.btn:focus{
+  outline: none;
+}
+
+.btn:hover {
+  position: relative;
+  background: transparent;
+  color: #41ab6b;
+  border: none;
+  transition: color 0.2s
+}
+
+.btn::after {
+  top: -7px;
+  left: -7px;
+  padding: 7px;
+  box-shadow: 0 0 0 4px #fff;
+  transition: transform 0.2s, opacity 0.2s;
+  transform: scale(.8);
+  opacity: 0
+}
+
+.btn:hover::after {
+  transform: scale(1);
+  opacity: 1
+}

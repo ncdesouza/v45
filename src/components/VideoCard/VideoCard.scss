@@ -1,0 +1,30 @@
+@import '../variables.scss';
+
+.root {
+
+}
+
+.cardExtra {
+  overflow: hidden;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 0 40px;
+}
+
+.topHugger {
+  margin-top: 0;
+}
+
+.bottomHugger {
+  margin-bottom: 0;
+}
+
+.bottomNone {
+  padding-bottom: 0;
+}
+
+.videoTitle {
+  font-size:25px;
+}

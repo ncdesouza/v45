@@ -1,0 +1,45 @@
+/**
+ * Created by nicholas on 09/01/16.
+ */
+@import '../variables.scss';
+
+.root {
+
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 0 40px;
+  max-width: $max-content-width;
+}
+
+.logo {
+  z-index: 99999;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.wrapper {
+  position: relative;
+}
+
+.slogan {
+  font-size: 40px;
+  color: ghostwhite;
+}
+
+.android {
+  position: relative;
+  width: 48%;
+  float: left;
+}
+
+.ios {
+  position: relative;
+  width: 48%;
+  margin-left: 4%;
+  float: left;
+}

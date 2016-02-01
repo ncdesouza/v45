@@ -1,0 +1,6 @@
+{
+  "name": "PageIndex",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./PageIndex.js"
+}
