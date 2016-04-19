@@ -4,6 +4,6 @@
 
 .root {
   background-color: black;
-  height: 100vh;
+  height: calc(100vh - 50px);
   width: 100vw;
 }

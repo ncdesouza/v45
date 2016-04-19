@@ -8,6 +8,9 @@
  */
 
 import React, { Component, PropTypes } from 'react';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+injectTapEventPlugin();
+
 import emptyFunction from 'fbjs/lib/emptyFunction';
 import s from './App.scss';
 import Navigation from '../Navigation';
@@ -15,6 +18,25 @@ import Footer from '../Footer';
 
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
+
+import getMuiTheme from 'material-ui/lib/styles/getMuiTheme';
+import themeDecorator from 'material-ui/lib/styles/theme-decorator';
+import colors from 'material-ui/lib/styles/colors';
+
+const muiTheme = getMuiTheme({
+  palette: {
+    primary1Color: colors.green500,
+    primary2Color: colors.green700,
+    primary3Color: colors.green100,
+  },
+}, {
+  avatar: {
+    borderColor: null,
+  },
+  userAgent: 'all',
+});
+
+
 
 
 class App extends Component {
@@ -73,7 +95,7 @@ class App extends Component {
         <div className={ s.header }>
           <Navigation />
         </div>
-        <div className={s.body}>
+        <div className={ s.body }>
           {this.props.children}
         </div>
         <div className={ s.footer }>
@@ -84,4 +106,4 @@ class App extends Component {
   }
 }
 
-export default connect(state => {return {state: state}})(App);
+export default themeDecorator(muiTheme)(connect(state => {return {state: state}})(App));

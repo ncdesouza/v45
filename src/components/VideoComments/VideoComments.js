@@ -17,6 +17,8 @@ import VideoCommentForm from '../VideoCommentForm';
 
 const URL = 'http://video45.cloudapp.net';
 
+import FlatButton from 'material-ui/lib/flat-button';
+import FontIcon from 'material-ui/lib/font-icon';
 
 @withStyles(s)
 class VideoComments extends Component {
@@ -29,11 +31,15 @@ class VideoComments extends Component {
 
   render() {
     const { comments, submitComment, user } = this.props;
+    let count = 0;
     return (
       <div className={s.root}>
         <ul className="collection">
           {
-            comments.map((comment) => <VideoComment key={comment._id} comment={comment} />)
+            comments.map((comment) => {
+              count++;
+              return <VideoComment key={comment._id} comment={comment} show={count <= 3}/>
+            })
           }
           <VideoCommentForm user={ user } submitComment={ submitComment }/>
         </ul>

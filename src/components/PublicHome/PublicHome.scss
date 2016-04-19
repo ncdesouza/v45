@@ -13,13 +13,22 @@
   max-width: $max-content-width;
 }
 
+.content {
+  position: relative;
+}
+
 .logo {
-  z-index: 99999;
+  //z-index: 99999;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+}
+
+.logoImg {
+  height: 250px;
+  width: 250px;
 }
 
 .wrapper {

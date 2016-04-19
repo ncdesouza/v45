@@ -33,6 +33,7 @@ const userSchema = Schema({
   },
   following : [{ type: Schema.Types.ObjectId, ref: 'User'}],
   followers : [{ type: Schema.Types.ObjectId, ref: 'User'}],
+  privacy: Number,
 });
 
 
@@ -58,14 +59,15 @@ userSchema.methods.newFollower = function(userId, cb) {
 userSchema.methods.unFollowUser = function(userId, cb) {
   let index = this.following.indexOf(userId);
   let del = this.following.splice(index, 1);
-  cb(null, del);
+  console.log(del);
+  this.save(cb(null, del));
 };
 
 userSchema.methods.removeFollower = function(userId, cb) {
   let index = this.followers.indexOf(userId);
   let del = this.followers.splice(index, 1);
-  cb(null, del);
-}
+  this.save(cb(null, del));
+};
 
 
 

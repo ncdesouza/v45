@@ -23,7 +23,7 @@ class ProfileCard extends Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
-      following: props.user.followers.indexOf(props.myId) != -1
+      following: props.user.following.indexOf(props.myId) != -1
     };
   }
 

@@ -17,6 +17,7 @@ import PageHome from './components/PageHome';
 import ProfilePage from './components/ProfilePage';
 import ContactPage from './components/ContactPage';
 import LoginPage from './components/LoginPage';
+import SettingsPage from './components/SettingsPage';
 
 import RegisterPage from './components/RegisterPage';
 
@@ -40,6 +41,8 @@ const router = new Router(on => {
   on('/login', async () => <LoginPage />);
 
   on('/register', async () => <RegisterPage />);
+
+  on('/settings', async () => <SettingsPage />);
 
   on('/:username', async(state) => {
     return <ProfilePage username={state.params.username} />

@@ -4,6 +4,11 @@ import s from './NavigationUser.scss';
 import withStyles from '../../decorators/withStyles';
 import Link from '../Link';
 
+import IconMenu from 'material-ui/lib/menus/icon-menu';
+import MenuItem from 'material-ui/lib/menus/menu-item';
+import IconButton from 'material-ui/lib/icon-button';
+import MoreVertIcon from 'material-ui/lib/svg-icons/navigation/more-vert';
+
 import { loginUser, logoutUser } from '../../actions/AuthActions';
 
 @withStyles(s)
@@ -36,7 +41,21 @@ class NavigationUser extends Component {
           </ul>
           <ul className="nav navbar-nav navbar-right">
             <li><Link to={ "/" + user }>{ user } <span className="fa fa-user fa-lg"/></Link></li>
-            <li><a href="/" className="fa fa-sign-out fa-2x" onClick={this._handleAuth}/></li>
+            <li>
+              <IconMenu
+                iconButtonElement={<IconButton ><MoreVertIcon color="#888888" /></IconButton>}
+                anchorOrigin={{horizontal: 'right', vertical: 'top'}}
+                targetOrigin={{horizontal: 'right', vertical: 'top'}}
+                style={{color: "rgba(255, 255, 255, .6)"}}
+                menuStyle={{zIndex: "999999"}} >
+                <MenuItem linkButton
+                          containerElement={<Link to="/settings" />}
+                          primaryText="Settings" />
+                <MenuItem primaryText="Help" />
+                <MenuItem primaryText="Send feedback" />
+                <MenuItem primaryText="Sign out" onClick={this._handleAuth} />
+              </IconMenu>
+            </li>
           </ul>
         </div>
       </div>

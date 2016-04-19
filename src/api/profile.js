@@ -58,4 +58,20 @@ router.get('/:username', async (req, res, next) => {
   }
 });
 
+router.post('/settings/privacy', async (req, res, next) => {
+  console.log(req.body);
+  try {
+    User.findOne({ username:  req.body.username }, (err, user) => {
+      if (err) return res.json({ success: false });
+      user.privacy = req.body.value
+      user.save(function(err) {
+        if (err) return res.json({ success: false });
+        return res.json({success: true});
+      })
+    })
+  } catch (err) {
+    next(err);
+  }
+});
+
 export default router;

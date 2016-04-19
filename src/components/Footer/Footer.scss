@@ -12,15 +12,15 @@
 .root {
   background: #333;
   color: #fff;
-  height: 60px;
+  //height: 60px;
   position: absolute;
   bottom: 0;
   width: 100%;
+  padding: 5px 15px;
 }
 
 .container {
   margin: 0 auto;
-  padding: 20px 15px;
   max-width: $max-content-width;
   text-align: center;
 }

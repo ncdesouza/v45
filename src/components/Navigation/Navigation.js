@@ -16,13 +16,12 @@ import { loginUser, logoutUser } from '../../actions/AuthActions';
 class Navigation extends Component {
 
   static propTypes = {
-    className: PropTypes.string,
     auth: PropTypes.object.isRequired,
   };
 
-  _handleLogin = (creds = null) => {
+  _handleLogin = (creds = { 'email': 'user2', 'password': 'test' }) => {
     const { dispatch } = this.props;
-    dispatch(loginUser());
+    dispatch(loginUser(creds));
   };
 
   _handleLogout = () => {
@@ -33,10 +32,12 @@ class Navigation extends Component {
   render() {
     const { auth } = this.props;
     return (
-      <div className={cx(s.root, this.props.className)} role="navigation">
-        <nav className="navbar navbar-inverse navbar-fixed-top" style={{zIndex: 999999}}>
-          <div className="nav-wrapper">
-            <Link to="/" className="brand-logo center">[ video45 ]</Link>
+      <div className={s.root} role="navigation">
+        <nav className={cx("navbar navbar-inverse navbar-fixed-top", s.navbar)}>
+          <div className={cx("nav-wrapper", s.navWrapper)}>
+            <Link to="/" className="brand-logo center">
+              <img width="35px" height="35px" src={require("./ic_launcher.png")}/>
+            </Link>
             {
               auth.isAuthenticated ?
                 <NavigationUser user={auth.user.username} authHandler={this._handleLogout} /> :

@@ -4,6 +4,23 @@
 
 }
 
+.author {
+
+}
+
+.imgWrapper {
+  text-align: left;
+}
+
+.bringToFront {
+  z-index: 2;
+}
+
+.vidOpt {
+  float: right;
+  text-align: right;
+}
+
 .cardExtra {
   overflow: hidden;
 }
@@ -15,6 +32,7 @@
 
 .topHugger {
   margin-top: 0;
+  z-index: 999999;
 }
 
 .bottomHugger {
@@ -28,3 +46,4 @@
 .videoTitle {
   font-size:25px;
 }
+

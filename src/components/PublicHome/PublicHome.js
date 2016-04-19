@@ -23,17 +23,19 @@ class PublicHome extends Component {
   render() {
     this.context.onSetTitle(title);
     return (
-      <div className={s.root}>
-        <BackgroundVideo />
-        <div className={s.logo}>
-          <dir className={s.wrapper}>
-            <img src={require('./v45.png')}/>
-            <h1 className={s.slogan}>Unleash your imagination</h1>
-            <div className={s.android}>
-              <img width="100%" src={require('./btn_googlePlay.png')}/>
+      <div className={ s.root }>
+        <div className={s.content}>
+          <BackgroundVideo />
+        </div>
+        <div className={ s.logo }>
+          <dir className={ s.wrapper }>
+            <img className={ s.logoImg } src={ require('./logo.svg') }/>
+            <h1 className={ s.slogan }>Unleash your imagination</h1>
+            <div className={ s.android }>
+              <img width="100%" src={ require('./btn_googlePlay.png') }/>
             </div>
-            <div className={s.ios}>
-              <img width="100%" src={require('./download_on_the_app_store.png')}/>
+            <div className={ s.ios }>
+              <img width="100%" src={ require('./download_on_the_app_store.png') }/>
             </div>
           </dir>
         </div>

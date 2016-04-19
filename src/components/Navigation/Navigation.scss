@@ -7,8 +7,20 @@
  * LICENSE.txt file in the root directory of this source tree.
  */
 
+@import "../variables.scss";
+
 .root {
 
+}
+
+.navbar {
+  height: auto !important;
+  line-height: 1.42857143;
+}
+
+.navWrapper {
+  max-width: $max-content-width;
+  margin: auto;
 }
 
 .link {

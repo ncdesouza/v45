@@ -30,4 +30,8 @@ export function unFollowUserApi() {
   return '/api/user/following/remove'
 }
 
+export function profilePrivacyApi() {
+  return '/api/profile/settings/privacy'
+}
+
 export default BASE_URL

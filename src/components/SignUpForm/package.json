@@ -1,0 +1,9 @@
+{
+  "name": "SignUpForm",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./SignUpForm.js",
+  "dependencies": {
+    "react-redux": "latest"
+  }
+}

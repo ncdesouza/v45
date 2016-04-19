@@ -13,8 +13,9 @@ import path from 'path';
 // express imports
 import express from 'express';
 import cookieParser from 'cookie-parser';
-import bodyParser from 'body-parser'
+import bodyParser from 'body-parser';
 import jwt from 'express-jwt';
+
 
 // database imports
 import mongoose from 'mongoose';
@@ -53,7 +54,7 @@ const server = global.server = express();
 server.use(express.static(path.join(__dirname, 'public')));
 server.use(cookieParser());
 server.use(bodyParser.urlencoded({ extended: false }));
-server.use(bodyParser.json())
+server.use(bodyParser.json());
 
 server.use(jwt({
   secret: 'video45rocks',
@@ -72,7 +73,6 @@ server.use(jwt({
   },
 }));
 
-
 //
 // Register API middleware
 // -----------------------------------------------------------------------------
@@ -82,6 +82,8 @@ server.use('/api/home', require('./api/home'));
 server.use('/api/profile', require('./api/profile'));
 server.use('/api/comment', require('./api/comment'));
 server.use('/api/user', require('./api/user'));
+server.use('/api/video', require('./api/video'));
+
 //
 // Register Redux middleware
 // -----------------------------------------------------------------------------
