@@ -38,6 +38,11 @@ class VideoCard extends Component {
     const { video, user } = this.props;
     return (
       <div className={cx("card-panel", s.cardExtra)}>
+        <Checkbox
+          checkedIcon={<ActionFavorite />}
+          unCheckedIcon={<ActionFavoriteBorder />}
+          onCheck={ () => alert("True")}
+        />
         <div className={cx("col-xs-12", s.bringToFront)}>
           <div className={cx("col-xs-3", s.imgWrapper)}>
             <img className="img-thumbnail"
@@ -77,13 +82,16 @@ class VideoCard extends Component {
             <Checkbox
               checkedIcon={<ActionFavorite />}
               unCheckedIcon={<ActionFavoriteBorder />}
+              onCheck={ () => alert("True")}
             />
           </div>
         </div>
-        <VideoComments user={ user }
-                       comments={ video.comments }
-                       submitComment={ this._submitComment }
-        />
+        <div>
+          <VideoComments user={ user }
+                         comments={ video.comments }
+                         submitComment={ this._submitComment }
+          />
+        </div>
       </div>
     );
   }
