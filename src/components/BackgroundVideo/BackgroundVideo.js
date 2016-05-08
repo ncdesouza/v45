@@ -6,10 +6,10 @@ var ReactDriveIn = require("react-drive-in");
 import ButtonMute from '../ButtonMute';
 
 const videos = [
-  'http://video45.cloudapp.net/public/vid/YouTube%20Rewind%20Now%20Watch%20Me%202015%20%20YouTubeRewind.mp4',
-  'http://video45.cloudapp.com/public/vid/dock.mp4',
-  'http://video45.cloudapp.com/public/vid/frontier.mp4',
-  'http://video45.cloudapp.com/public/vid/river.mp4'
+  'http://api.video45.co/public/vid/YouTube%20Rewind%20Now%20Watch%20Me%202015%20%20YouTubeRewind.mp4',
+  'http://api.video45.co/public/vid/dock.mp4',
+  'http://api.video45.co/public/vid/frontier.mp4',
+  'http://api.video45.co/public/vid/river.mp4'
 ];
 
 @withStyles(s)

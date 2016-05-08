@@ -30,7 +30,7 @@ class PublicHome extends Component {
         <div className={ s.logo }>
           <dir className={ s.wrapper }>
             <img className={ s.logoImg } src={ require('./logo.svg') }/>
-            <h1 className={ s.slogan }>Unleash your imagination</h1>
+            <h1 className={ s.slogan }>Capture your imagination</h1>
             <div className={ s.android }>
               <img width="100%" src={ require('./btn_googlePlay.png') }/>
             </div>
