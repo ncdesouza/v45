@@ -8,9 +8,9 @@ var mongoose = require('mongoose');
 mongoose.connect('localhost:27017/video45'); // connect to db
 
 // get db models
-require('./User.js');
-require('./Video.js');
-require('./Comment.js');
+require('../src/models/User.js');
+require('../src/models/Video.js');
+require('../src/models/Comment.js');
 
 var User = mongoose.model('User');
 var Video = mongoose.model('Video');
@@ -180,6 +180,7 @@ user2.save(callback);
 
 function
 callback(err) {
+
     if (err) throw err;
 }
 

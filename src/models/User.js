@@ -57,15 +57,15 @@ userSchema.methods.newFollower = function(userId, cb) {
 };
 
 userSchema.methods.unFollowUser = function(userId, cb) {
-  let index = this.following.indexOf(userId);
-  let del = this.following.splice(index, 1);
+  var index = this.following.indexOf(userId);
+  var del = this.following.splice(index, 1);
   console.log(del);
   this.save(cb(null, del));
 };
 
 userSchema.methods.removeFollower = function(userId, cb) {
-  let index = this.followers.indexOf(userId);
-  let del = this.followers.splice(index, 1);
+  var index = this.followers.indexOf(userId);
+  var del = this.followers.splice(index, 1);
   this.save(cb(null, del));
 };
 
