@@ -176,16 +176,11 @@ user2.videos.push(video7);
 
 
 user1.save(callback);
-user2.save(callback(closeDB));
+user2.save(callback);
 
 function
-callback(err, close) {
-
+callback(err) {
     if (err) throw err;
-
-    if (close) {
-      close();
-    }
 }
 
 
