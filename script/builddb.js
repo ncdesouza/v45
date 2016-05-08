@@ -3,8 +3,6 @@
  */
 
 
-var traceur = require('traceur');
-
 // connect to db
 var mongoose = require('mongoose');
 mongoose.connect('video45.cloudapp.net:27017/video45'); // connect to db
@@ -12,7 +10,6 @@ mongoose.connect('video45.cloudapp.net:27017/video45'); // connect to db
 // get db models
 require('../src/models/User.js');
 require('../src/models/Video.js');
-//traceur.require('../src/models/Comment.js');
 
 var User = mongoose.model('User');
 var Video = mongoose.model('Video');
@@ -178,11 +175,16 @@ user2.videos.push(video7);
 
 
 user1.save(callback);
-user2.save(callback);
+user2.save(callback(closeDB));
 
 function
-callback(err) {
+callback(err, close=null) {
+
     if (err) throw err;
+
+    if (close) {
+      close();
+    }
 }
 
 
