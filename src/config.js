@@ -6,6 +6,6 @@ export const googleAnalyticsId = 'UA-XXXXX-X';
 
 export const database = {
   'url' : '127.0.0.1:24000',
-  'urlDev' : 'video45.cloudapp.net:27017/video45',
+  'urlDev' : 'localhost:27017/video45',
 };
 
