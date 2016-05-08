@@ -178,7 +178,7 @@ user1.save(callback);
 user2.save(callback(closeDB));
 
 function
-callback(err, close=null) {
+callback(err, close = null) {
 
     if (err) throw err;
 
