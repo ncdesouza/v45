@@ -5,11 +5,12 @@
 
 // connect to db
 var mongoose = require('mongoose');
-mongoose.connect('video45.cloudapp.net:27017/video45'); // connect to db
+mongoose.connect('localhost:27017/video45'); // connect to db
 
 // get db models
 require('../src/models/User.js');
 require('../src/models/Video.js');
+require('../src/models/Comment.js');
 
 var User = mongoose.model('User');
 var Video = mongoose.model('Video');
@@ -178,7 +179,7 @@ user1.save(callback);
 user2.save(callback(closeDB));
 
 function
-callback(err, close = null) {
+callback(err, close) {
 
     if (err) throw err;
 
